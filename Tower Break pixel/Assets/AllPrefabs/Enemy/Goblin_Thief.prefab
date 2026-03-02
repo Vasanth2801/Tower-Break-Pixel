@@ -1271,6 +1271,7 @@ GameObject:
   - component: {fileID: 8265756992884609035}
   - component: {fileID: 2721528016318977409}
   - component: {fileID: 2193067962787531455}
+  - component: {fileID: 6119874873920420892}
   m_Layer: 7
   m_Name: Goblin_Thief
   m_TagString: Untagged
@@ -1451,6 +1452,20 @@ MonoBehaviour:
   isChasing: 0
   animator: {fileID: 7725861459586038444}
   attackCoolDown: 2
+--- !u!114 &6119874873920420892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4942871556725365913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860828e1dff3e2c4da1f5aa4951ee22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 120
+  currentHealth: 0
 --- !u!1 &5325237455623666299
 GameObject:
   m_ObjectHideFlags: 0
