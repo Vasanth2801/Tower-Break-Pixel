@@ -114,11 +114,15 @@ public class Goblin : MonoBehaviour
                 continue;
             }
 
-            Debug.Log("Player Got Attacked");
+            PlayerHealth ph = hit.GetComponent<PlayerHealth>();
+            if (ph != null)
+            {
+                ph.TakeDamage(10);
+            }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
@@ -126,7 +130,7 @@ public class Goblin : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {

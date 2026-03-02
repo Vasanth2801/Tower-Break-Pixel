@@ -79,7 +79,7 @@ public class Skeleton : MonoBehaviour
 
     IEnumerator AttackCoroutine()
     {
-        isAttacking = false;
+        isAttacking = true;
 
         while (true)
         {
@@ -105,8 +105,8 @@ public class Skeleton : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
-
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+
         foreach (Collider2D hit in hitPlayer)
         {
             if (player == null)
@@ -114,7 +114,13 @@ public class Skeleton : MonoBehaviour
                 continue;
             }
 
-            Debug.Log("Player Got Attacked");
+            PlayerHealth ph = hit.GetComponent<PlayerHealth>();
+            if (ph != null)
+            {
+                ph.TakeDamage(10);
+            }
+
+            Debug.Log("Player Hit");
         }
     }
 
